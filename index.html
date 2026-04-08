@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAF Skills - Browse 37 Claude Code Skills</title>
+    <meta name="description" content="Discover and install 37 Claude Code skills for enhanced AI-powered development with FAF.">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='45' fill='%2327c93f'/><path d='M30 50 L45 65 L70 35' stroke='white' stroke-width='8' fill='none' stroke-linecap='round' stroke-linejoin='round'/></svg>">
+    <style>
+        :root {
+            --faf-green: #27c93f;
+            --faf-green-hover: #22b137;
+            --faf-green-bright: #00ff88;
+            --bg-primary: #fefcf8;
+            --bg-secondary: #f9f6f1;
+            --dark: #1a1a1a;
+            --gray: #4a4a4a;
+            --muted: #7a7a7a;
+            --border: #e5e5e5;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            line-height: 1.6;
+            color: var(--gray);
+            background: var(--bg-primary);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Navigation */
+        nav {
+            background: var(--white);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--dark);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo svg {
+            width: 32px;
+            height: 32px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--gray);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--faf-green);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            color: var(--dark);
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--gray);
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-bottom: 2rem;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--faf-green);
+        }
+
+        .stat-label {
+            color: var(--muted);
+        }
+
+        /* Search Section */
+        .search-section {
+            background: var(--white);
+            padding: 2rem 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .search-container {
+            max-width: 600px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 1rem 1rem 1rem 3rem;
+            font-size: 1rem;
+            border: 2px solid var(--border);
+            border-radius: 8px;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        .search-input:focus {
+            border-color: var(--faf-green);
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--muted);
+        }
+
+        /* Skills Grid */
+        .skills-section {
+            padding: 3rem 0;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .skill-card {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1.5rem;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .skill-card:hover {
+            border-color: var(--faf-green);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 20px rgba(39, 201, 63, 0.1);
+        }
+
+        .skill-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 1rem;
+        }
+
+        .skill-name {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--dark);
+        }
+
+        .skill-category {
+            background: var(--bg-secondary);
+            color: var(--gray);
+            padding: 0.25rem 0.75rem;
+            border-radius: 4px;
+            font-size: 0.875rem;
+        }
+
+        .skill-description {
+            color: var(--gray);
+            margin-bottom: 1rem;
+            line-height: 1.5;
+        }
+
+        .skill-command {
+            background: var(--dark);
+            color: var(--white);
+            padding: 0.75rem 1rem;
+            border-radius: 4px;
+            font-family: 'Monaco', 'Consolas', monospace;
+            font-size: 0.875rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .copy-button {
+            background: var(--faf-green);
+            color: var(--white);
+            border: none;
+            padding: 0.25rem 0.75rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.75rem;
+            transition: background-color 0.3s;
+        }
+
+        .copy-button:hover {
+            background: var(--faf-green-hover);
+        }
+
+        .copy-button.copied {
+            background: var(--gray);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--bg-secondary);
+            padding: 3rem 0;
+            margin-top: 4rem;
+            text-align: center;
+            color: var(--muted);
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 1rem;
+        }
+
+        .footer-links a {
+            color: var(--muted);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--faf-green);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero-stats {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container nav-content">
+            <a href="/" class="logo">
+                <svg viewBox="0 0 100 100">
+                    <circle cx="50" cy="50" r="45" fill="#27c93f"/>
+                    <path d="M30 50 L45 65 L70 35" stroke="white" stroke-width="8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                FAF Skills
+            </a>
+            <div class="nav-links">
+                <a href="https://faf.one">FAF</a>
+                <a href="https://foundation.faf.one">Foundation</a>
+                <a href="https://github.com/Wolfe-Jam/faf-skills">GitHub</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Claude Code Skills</h1>
+            <p>Discover and install specialized skills to enhance your AI-powered development workflow with FAF</p>
+            
+            <div class="hero-stats">
+                <div class="stat">
+                    <div class="stat-number">37</div>
+                    <div class="stat-label">Skills Available</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">5</div>
+                    <div class="stat-label">Categories</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">FAF Compatible</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="search-section">
+        <div class="container">
+            <div class="search-container">
+                <span class="search-icon">🔍</span>
+                <input type="text" class="search-input" id="searchInput" placeholder="Search skills... (e.g., 'commit', 'mcp', 'faf')">
+            </div>
+        </div>
+    </section>
+
+    <section class="skills-section">
+        <div class="container">
+            <div id="skillsGrid" class="skills-grid">
+                <!-- Skills will be populated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>Part of the FAF Foundation ecosystem</p>
+            <div class="footer-links">
+                <a href="https://faf.one">faf.one</a>
+                <a href="https://github.com/Wolfe-Jam/faf-skills">View on GitHub</a>
+                <a href="https://www.npmjs.com/package/faf-cli">npm</a>
+                <a href="https://wolfejam.dev">@wolfejam</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Skills data - in production this would come from the faf-skills repo
+        const skills = [
+            // FAF Core Skills
+            { name: "faf-expert", category: "faf", description: "Expert in .faf files, project DNA, and bi-sync functionality" },
+            { name: "faf-go", category: "faf", description: "Guided interview process to reach 100% FAF score" },
+            { name: "faf-score", category: "faf", description: "Score and validate .faf files for AI-readiness" },
+            { name: "faf-sync", category: "faf", description: "Synchronize .faf files with CLAUDE.md bi-directionally" },
+            { name: "faf-validate", category: "faf", description: "Validate FAF file structure and content" },
+            { name: "faf-wizard", category: "faf", description: "Interactive wizard for FAF configuration" },
+            { name: "faf-migrate", category: "faf", description: "Migrate projects to latest FAF format version" },
+            { name: "faf-platforms", category: "faf", description: "Platform-specific FAF configurations" },
+            { name: "faf-teacher", category: "faf", description: "Learn FAF concepts and best practices" },
+            { name: "faf-enhance", category: "faf", description: "Enhance existing FAF files to higher scores" },
+            { name: "faf-docs", category: "faf", description: "Generate documentation from FAF files" },
+            { name: "faf-format-inspector", category: "faf", description: "Deep inspection of FAF file format details" },
+            { name: "faf-git", category: "faf", description: "Git-aware FAF operations and history" },
+            
+            // Development Skills
+            { name: "commit", category: "dev", description: "Context-aware git commits powered by FAF" },
+            { name: "pr", category: "dev", description: "Context-aware pull requests powered by FAF" },
+            { name: "review", category: "dev", description: "Context-aware code reviews powered by FAF" },
+            { name: "repo-maintainer", category: "dev", description: "Repository maintenance and organization" },
+            { name: "gif-recorder", category: "dev", description: "Create terminal GIF recordings using VHS" },
+            
+            // MCP Skills
+            { name: "mcp-builder", category: "mcp", description: "Guide for creating MCP servers" },
+            { name: "wjttc-builder", category: "mcp", description: "Auto-generate Championship-Grade test suites" },
+            { name: "wjttc-tester", category: "mcp", description: "F1-inspired testing expert for MCP servers" },
+            
+            // Integration Skills
+            { name: "n8n-builder", category: "integration", description: "Expert in building n8n workflows" },
+            { name: "n8n-debugger", category: "integration", description: "Expert in debugging n8n workflows" },
+            
+            // Documentation Skills
+            { name: "prd-builder", category: "docs", description: "Generate Product Requirements documents" },
+            { name: "sys-reqs-builder", category: "docs", description: "Generate System Requirements documents" },
+            { name: "arch-builder", category: "docs", description: "Generate Technical Architecture documents" },
+            
+            // Publishing Skills
+            { name: "publish", category: "publish", description: "General publishing workflow automation" },
+            { name: "pubpro", category: "publish", description: "FAF publish protocol for npm + MCP Registry" },
+            { name: "pubpypi", category: "publish", description: "Publish Python packages to PyPI" },
+            { name: "pubcrate", category: "publish", description: "Publish Rust crates to crates.io" },
+            
+            // Utility Skills
+            { name: "skill-creator", category: "utility", description: "Guide for creating new Claude Code skills" }
+        ];
+
+        // Populate skills grid
+        function renderSkills(skillsToRender) {
+            const grid = document.getElementById('skillsGrid');
+            grid.innerHTML = '';
+            
+            skillsToRender.forEach(skill => {
+                const card = document.createElement('div');
+                card.className = 'skill-card';
+                card.innerHTML = `
+                    <div class="skill-header">
+                        <div class="skill-name">/${skill.name}</div>
+                        <div class="skill-category">${skill.category}</div>
+                    </div>
+                    <div class="skill-description">${skill.description}</div>
+                    <div class="skill-command">
+                        <span>/${skill.name}</span>
+                        <button class="copy-button" onclick="copyCommand('/${skill.name}', this)">Copy</button>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        // Copy command to clipboard
+        function copyCommand(command, button) {
+            navigator.clipboard.writeText(command).then(() => {
+                button.textContent = 'Copied!';
+                button.classList.add('copied');
+                setTimeout(() => {
+                    button.textContent = 'Copy';
+                    button.classList.remove('copied');
+                }, 2000);
+            });
+        }
+
+        // Search functionality
+        const searchInput = document.getElementById('searchInput');
+        searchInput.addEventListener('input', (e) => {
+            const query = e.target.value.toLowerCase();
+            if (query === '') {
+                renderSkills(skills);
+            } else {
+                const filtered = skills.filter(skill => 
+                    skill.name.toLowerCase().includes(query) ||
+                    skill.category.toLowerCase().includes(query) ||
+                    skill.description.toLowerCase().includes(query)
+                );
+                renderSkills(filtered);
+            }
+        });
+
+        // Initial render
+        renderSkills(skills);
+    </script>
+</body>
+</html>

@@ -1,0 +1,14 @@
+{
+  "name": "faf-skills-site",
+  "version": "1.0.0",
+  "description": "Static website for skills.faf.one - Browse and discover 37 Claude Code skills",
+  "type": "module",
+  "scripts": {
+    "dev": "npx serve .",
+    "deploy": "vercel --prod"
+  },
+  "keywords": ["faf", "skills", "claude-code", "ai", "static-site"],
+  "author": "FAF Foundation",
+  "license": "MIT",
+  "homepage": "https://skills.faf.one"
+}
