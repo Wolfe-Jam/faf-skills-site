@@ -1,7 +1,7 @@
 {
   "name": "faf-skills-site",
   "version": "1.0.0",
-  "description": "Static website for skills.faf.one - Browse and discover 37 Claude Code skills",
+  "description": "Static website for skills.faf.one - browse and discover Claude Code skills",
   "type": "module",
   "scripts": {
     "dev": "npx serve .",

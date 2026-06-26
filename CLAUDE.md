@@ -1,10 +1,10 @@
-<!-- faf: faf-skills-site | html | Static website for skills.faf.one - Browse and discover 37 Claude Code skills -->
+<!-- faf: faf-skills-site | html | Static website for skills.faf.one - browse and discover Claude Code skills -->
 
 # CLAUDE.md — faf-skills-site
 
 ## What This Is
 
-Static website for skills.faf.one - Browse and discover 37 Claude Code skills
+Static website for skills.faf.one - browse and discover Claude Code skills
 
 ## Stack
 
@@ -32,7 +32,7 @@ Static website for skills.faf.one - Browse and discover 37 Claude Code skills
 ## Context
 
 - **Who:** FAF ecosystem users and Claude Code skill discoverers
-- **What:** Static HTML portal for browsing 37 Claude Code skills from faf-skills repo
+- **What:** Static HTML portal for browsing Claude Code skills from faf-skills repo
 - **Why:** Make FAF skills easily discoverable with search, copy URLs, installation guides
 - **Where:** skills.faf.one subdomain, following foundation.faf.one pattern
 - **When:** 2026-04-08 creation, deploys to Vercel for immediate access
