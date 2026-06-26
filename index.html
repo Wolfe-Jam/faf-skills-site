@@ -84,6 +84,33 @@
             height: 32px;
         }
 
+        .nav-left {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        /* Always visible — NOT inside .nav-links, so mobile cannot hide it. */
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+            color: var(--dark);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            padding: 0.4rem 0.85rem;
+            border: 1px solid var(--gray);
+            border-radius: 6px;
+            white-space: nowrap;
+            transition: color 0.3s, border-color 0.3s;
+        }
+
+        .back-btn:hover {
+            color: var(--faf-green);
+            border-color: var(--faf-green);
+        }
+
         .nav-links {
             display: flex;
             gap: 2rem;
@@ -373,15 +400,17 @@
 <body>
     <nav>
         <div class="container nav-content">
-            <a href="/" class="logo">
-                <svg viewBox="0 0 24 24" aria-label="FAF Skills">
-                    <circle cx="12" cy="12" r="9.5" fill="none" stroke="currentColor" stroke-width="1.4"/>
-                    <path d="M12 5 L13.65 9.74 L18.66 9.84 L14.66 12.87 L16.11 17.66 L12 14.8 L7.89 17.66 L9.34 12.87 L5.34 9.84 L10.35 9.74 Z" fill="currentColor"/>
-                </svg>
-                FAF Skills
-            </a>
+            <div class="nav-left">
+                <a href="https://faf.one" class="back-btn" aria-label="Back to faf.one">← faf.one</a>
+                <a href="/" class="logo">
+                    <svg viewBox="0 0 24 24" aria-label="FAF Skills">
+                        <circle cx="12" cy="12" r="9.5" fill="none" stroke="currentColor" stroke-width="1.4"/>
+                        <path d="M12 5 L13.65 9.74 L18.66 9.84 L14.66 12.87 L16.11 17.66 L12 14.8 L7.89 17.66 L9.34 12.87 L5.34 9.84 L10.35 9.74 Z" fill="currentColor"/>
+                    </svg>
+                    FAF Skills
+                </a>
+            </div>
             <div class="nav-links">
-                <a href="https://faf.one">FAF</a>
                 <a href="https://foundation.faf.one">Foundation</a>
                 <a href="https://github.com/Wolfe-Jam/faf-skills">GitHub</a>
             </div>
