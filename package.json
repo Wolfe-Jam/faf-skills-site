@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "npx serve .",
-    "deploy": "vercel --prod"
+    "deploy": "wrangler pages deploy . --project-name=faf-skills-site"
   },
   "keywords": ["faf", "skills", "claude-code", "ai", "static-site"],
   "author": "FAF Foundation",

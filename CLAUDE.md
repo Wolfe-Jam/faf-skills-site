@@ -18,7 +18,7 @@ Static website for skills.faf.one - browse and discover Claude Code skills
 - **Runtime:** browser
 - **Database:** none
 - **Connection:** none
-- **Hosting:** vercel
+- **Hosting:** cloudflare-pages
 - **Build:** none
 - **Cicd:** github-actions
 - **Monorepo Tool:** none
@@ -35,7 +35,7 @@ Static website for skills.faf.one - browse and discover Claude Code skills
 - **What:** Static HTML portal for browsing Claude Code skills from faf-skills repo
 - **Why:** Make FAF skills easily discoverable with search, copy URLs, installation guides
 - **Where:** skills.faf.one subdomain, following foundation.faf.one pattern
-- **When:** 2026-04-08 creation, deploys to Vercel for immediate access
+- **When:** 2026-04-08 creation, deploys to Cloudflare Pages (project: faf-skills-site)
 - **How:** Single-page HTML site with vanilla JS search, links to faf-skills repo
 
 ---

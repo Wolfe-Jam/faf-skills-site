@@ -1,0 +1,11 @@
+# Keep repo meta out of the public Cloudflare Pages deploy — ship the site, not the docs.
+*.md
+project.faf
+package.json
+package-lock.json
+.github
+.gitignore
+.assetsignore
+.vercel
+.wrangler
+node_modules
