@@ -100,7 +100,7 @@ python -m http.server 8000
 
 ### Tech Stack
 - **Frontend:** Vanilla HTML5, CSS3, JavaScript ES6+
-- **Hosting:** Vercel with custom domain
+- **Hosting:** Cloudflare Pages (skills.faf.one)
 - **Repository:** GitHub with automated deployment
 - **FAF Score:** 100% Trophy (Championship grade)
 
@@ -147,28 +147,19 @@ Consistent with the FAF ecosystem design language used across:
 
 ### Production
 - **Live URL:** https://skills.faf.one
-- **Platform:** Vercel
+- **Platform:** Cloudflare Pages
 - **DNS:** Managed through FAF ecosystem
-- **SSL:** Automatic (Let's Encrypt)
+- **SSL:** Automatic (Cloudflare)
 
-### Development Deployment
+### Deploy
 
 ```bash
-# Install Vercel CLI
-npm install -g vercel
-
-# Deploy to preview
-vercel
-
-# Deploy to production
-vercel --prod
+# Deploy to Cloudflare Pages
+wrangler pages deploy . --project-name=faf-skills-site
 ```
 
 ### CI/CD
-Automatic deployment triggered on:
-- Push to `main` branch
-- Pull request merge
-- Manual deployment via Vercel dashboard
+Deployment is manual via the `wrangler pages deploy` command above.
 
 ---
 
