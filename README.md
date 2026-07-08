@@ -77,9 +77,7 @@ Development tools and helpers
 
 ## 🚀 Quick Start
 
-**Context for the skills:** Run `bunx faf export --agents` (or `bunx faf`) from faf-cli to generate AGENTS.md, CLAUDE.md and related files with accurate stack, commands, and guardrails. The skills (including `/faf-expert`, `/commit`, `/pr`, `/review`) perform better with fresh FAF-derived context.
-
-See the [faf-cli agent guide](https://github.com/Wolfe-Jam/faf-cli/blob/main/docs/faf-cli-for-agents.md).
+**Context for the skills:** `bunx faf export --agents` generates the AGENTS.md / CLAUDE.md the skills read — fresh FAF-derived context, zero-install. See [the faf-cli agent guide 👀](https://github.com/Wolfe-Jam/faf-cli/blob/main/docs/faf-cli-for-agents.md).
 
 ### For Users
 Visit **[skills.faf.one](https://skills.faf.one)** and start discovering skills immediately.
