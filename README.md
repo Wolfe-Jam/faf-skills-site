@@ -2,9 +2,8 @@
 
 **Discover, search, and instantly install 37 Claude Code skills**
 
-[![FAF Foundation](https://img.shields.io/badge/FAF-Foundation_Approved-27c93f)](https://faf.one)
+[![FAF Trophy 100%](https://img.shields.io/badge/FAF-%F0%9F%8F%86%20100%25-000000?labelColor=FF6B35)](https://faf.one)
 [![Live Site](https://img.shields.io/badge/Live-skills.faf.one-blue)](https://skills.faf.one)
-[![FAF Score](https://img.shields.io/badge/FAF_Score-100%25_Trophy-gold)](https://faf.one)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 > **The definitive portal for Claude Code skills in the FAF ecosystem**
