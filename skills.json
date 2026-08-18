@@ -1,0 +1,37 @@
+[
+  {
+    "name": "faf-context",
+    "category": "faf",
+    "description": "100% ✪ AI-readiness, fast — typed, portable context you own (IANA-registered .faf)"
+  },
+  {
+    "name": "faf-expert",
+    "category": "faf",
+    "description": "Master the IANA-registered .faf format — scoring, MCP config, bi-sync, the 21-slot model"
+  },
+  {
+    "name": "faf-go",
+    "category": "faf",
+    "description": "Guided interview to Gold Code (100% AI-Readiness)"
+  },
+  {
+    "name": "faf-wizard",
+    "category": "faf",
+    "description": "Done-for-you .faf generator"
+  },
+  {
+    "name": "wjttc-builder",
+    "category": "mcp",
+    "description": "PLAN and GENERATE WJTTC (Championship-Grade) test suites for any project"
+  },
+  {
+    "name": "wjttc-tester",
+    "category": "mcp",
+    "description": "WJTTC test EXECUTOR + reporter"
+  },
+  {
+    "name": "repo-maintainer",
+    "category": "utility",
+    "description": "Championship-grade repository maintenance"
+  }
+]

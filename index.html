@@ -499,46 +499,15 @@
         // Bundled FALLBACK skill list — shown instantly and used only if the
         // live skills.json fetch (see bottom of script) fails. Live data comes
         // from Wolfe-Jam/faf-skills/skills.json, generated from the SKILL.md files.
+        // Same 7 as /skills.json — first paint must not invent ghosts.
         const skills = [
-            // FAF Core Skills
-            { name: "faf-context", category: "faf", description: "Builder quickstart — give the AI the underivable context (goal + 6Ws) to hit 100% AI-readiness, the fast way" },
-            { name: "faf-expert", category: "faf", description: "Expert in .faf files, project DNA, and bi-sync functionality" },
-            { name: "faf-go", category: "faf", description: "Guided interview process to reach 100% FAF score" },
-            { name: "faf-score", category: "faf", description: "Score and validate .faf files for AI-readiness" },
-            { name: "faf-sync", category: "faf", description: "Synchronize .faf files with CLAUDE.md bi-directionally" },
-            { name: "faf-validate", category: "faf", description: "Validate FAF file structure and content" },
-            { name: "faf-wizard", category: "faf", description: "Interactive wizard for FAF configuration" },
-            { name: "faf-migrate", category: "faf", description: "Migrate projects to latest FAF format version" },
-            { name: "faf-platforms", category: "faf", description: "Platform-specific FAF configurations" },
-            { name: "faf-teacher", category: "faf", description: "Learn FAF concepts and best practices" },
-            { name: "faf-enhance", category: "faf", description: "Enhance existing FAF files to higher scores" },
-            { name: "faf-docs", category: "faf", description: "Generate documentation from FAF files" },
-            { name: "faf-format-inspector", category: "faf", description: "Deep inspection of FAF file format details" },
-            { name: "faf-git", category: "faf", description: "Git-aware FAF operations and history" },
-            
-            // Development Skills
-            { name: "commit", category: "dev", description: "Context-aware git commits powered by FAF" },
-            { name: "pr", category: "dev", description: "Context-aware pull requests powered by FAF" },
-            { name: "review", category: "dev", description: "Context-aware code reviews powered by FAF" },
-            { name: "repo-maintainer", category: "dev", description: "Repository maintenance and organization" },
-            { name: "gif-recorder", category: "dev", description: "Create terminal GIF recordings using VHS" },
-            
-            // MCP Skills
-            { name: "mcp-builder", category: "mcp", description: "Guide for creating MCP servers" },
-            { name: "wjttc-builder", category: "mcp", description: "Auto-generate Championship-Grade test suites" },
-            { name: "wjttc-tester", category: "mcp", description: "F1-inspired testing expert for MCP servers" },
-            
-            // Integration Skills
-            { name: "n8n-builder", category: "integration", description: "Expert in building n8n workflows" },
-            { name: "n8n-debugger", category: "integration", description: "Expert in debugging n8n workflows" },
-            
-            // Documentation Skills
-            { name: "prd-builder", category: "docs", description: "Generate Product Requirements documents" },
-            { name: "sys-reqs-builder", category: "docs", description: "Generate System Requirements documents" },
-            { name: "arch-builder", category: "docs", description: "Generate Technical Architecture documents" },
-            
-            // Utility Skills
-            { name: "skill-creator", category: "utility", description: "Guide for creating new Claude Code skills" }
+            { name: "faf-context", category: "faf", description: "100% ✪ AI-readiness, fast — typed, portable context you own (IANA-registered .faf)" },
+            { name: "faf-expert", category: "faf", description: "Master the IANA-registered .faf format — scoring, MCP config, bi-sync, the 21-slot model" },
+            { name: "faf-go", category: "faf", description: "Guided interview to Gold Code (100% AI-readiness)" },
+            { name: "faf-wizard", category: "faf", description: "Done-for-you .faf generator" },
+            { name: "wjttc-builder", category: "mcp", description: "PLAN and GENERATE WJTTC (Championship-Grade) test suites for any project" },
+            { name: "wjttc-tester", category: "mcp", description: "WJTTC test EXECUTOR + reporter" },
+            { name: "repo-maintainer", category: "utility", description: "Championship-grade repository maintenance" }
         ];
 
         // Populate skills grid
@@ -607,14 +576,21 @@
         // Instant paint from the bundled fallback, then try the live manifest.
         refresh(skills);
 
-        // SINGLE SOURCE OF TRUTH: skills/*/SKILL.md → skills.json
-        // (built by scripts/build-skills-json.mjs in Wolfe-Jam/faf-skills).
-        // Fetch the live manifest; on any failure (offline, CORS, 404) the
-        // bundled fallback already on screen stays — the page never breaks.
-        fetch('https://raw.githubusercontent.com/Wolfe-Jam/faf-skills/main/skills.json', { cache: 'no-cache' })
-            .then(r => r.ok ? r.json() : Promise.reject(r.status))
-            .then(data => { if (Array.isArray(data) && data.length) refresh(data); })
-            .catch(() => { /* keep the bundled fallback */ });
+        // Same-origin /skills.json is the hub copy (written by faf-skills
+        // scripts/build-skills-json.mjs). GitHub raw is the backup hop.
+        // Fallback above is the same 7 — first paint never invents ghosts.
+        function loadManifest(url) {
+            return fetch(url, { cache: 'no-cache' })
+                .then(r => r.ok ? r.json() : Promise.reject(r.status))
+                .then(data => {
+                    if (Array.isArray(data) && data.length) refresh(data);
+                    else return Promise.reject('empty');
+                });
+        }
+        loadManifest('/skills.json').catch(() =>
+            loadManifest('https://raw.githubusercontent.com/Wolfe-Jam/faf-skills/main/skills.json')
+                .catch(() => { /* keep the bundled 7 */ })
+        );
     </script>
 </body>
 </html>

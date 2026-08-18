@@ -1,6 +1,6 @@
 # 🛠️ FAF Skills Portal
 
-**Discover, search, and instantly install 37 Claude Code skills**
+**Discover, search, and instantly install the live Claude Code skills**
 
 [![FAF Trophy 100%](https://img.shields.io/badge/FAF-%F0%9F%8F%86%20100%25-000000?labelColor=FF6B35)](https://faf.one)
 [![Live Site](https://img.shields.io/badge/Live-skills.faf.one-blue)](https://skills.faf.one)
@@ -14,63 +14,35 @@
 
 ## ✨ What This Is
 
-The **FAF Skills Portal** is the official web interface for discovering and installing Claude Code skills. Built with championship-grade engineering standards, it provides instant access to 37 specialized skills that enhance AI-powered development workflows.
+The **FAF Skills Portal** is the official web interface for discovering and installing Claude Code skills. The catalog is the live `skills.json` from [faf-skills](https://github.com/Wolfe-Jam/faf-skills) — currently **7** skills, 3 categories. The count is the file, not this README.
 
 ### 🎯 Key Features
 
 - **🔍 Instant Search** - Find skills by name, category, or functionality
 - **📋 One-Click Copy** - Copy skill commands directly to clipboard
-- **🎨 5 Skill Categories** - Organized by purpose and use case
+- **🎨 3 Skill Categories** - faf · mcp · utility
 - **📱 Mobile-First Design** - Perfect on any device
 - **⚡ Zero Build Process** - Pure HTML/CSS/JS for maximum speed
 - **🏆 100% FAF Score** - Championship-grade AI context included
 
 ---
 
-## 🛠️ Available Skills (37)
+## Available Skills (7)
 
-### 🎨 **FAF Core** (13 skills)
-Essential FAF operations and project management
-- `/faf-expert` - Expert in .faf files and project DNA
-- `/faf-go` - Guided interview to reach 100% FAF score
-- `/faf-score` - Score and validate .faf files
-- `/faf-sync` - Bi-directional .faf ↔ CLAUDE.md sync
-- _...and 9 more_
+Source of truth: [`skills.json`](./skills.json) (copied from faf-skills on generate).
 
-### 💻 **Development** (5 skills)
-Git workflows, code review, and project maintenance
-- `/commit` - Context-aware git commits powered by FAF
-- `/pr` - Context-aware pull requests
-- `/review` - Intelligent code reviews
-- _...and 2 more_
+### faf
+- `/faf-context` — 100% ✪ AI-readiness, fast
+- `/faf-expert` — scoring, MCP config, bi-sync, 21-slot model
+- `/faf-go` — guided interview to Gold Code
+- `/faf-wizard` — done-for-you `.faf` generator
 
-### 🔌 **MCP Integration** (3 skills)
-Model Context Protocol server development
-- `/mcp-builder` - Guide for creating MCP servers
-- `/wjttc-builder` - Championship-grade test suites
-- `/wjttc-tester` - F1-inspired testing for MCP servers
+### mcp
+- `/wjttc-builder` — plan and generate WJTTC test suites
+- `/wjttc-tester` — WJTTC test executor + reporter
 
-### 🔗 **Integration** (2 skills)
-Third-party platform integrations
-- `/n8n-builder` - Expert n8n workflow creation
-- `/n8n-debugger` - n8n troubleshooting and optimization
-
-### 📚 **Documentation** (3 skills)
-Technical documentation generation
-- `/prd-builder` - Product Requirements Documents
-- `/sys-reqs-builder` - System Requirements
-- `/arch-builder` - Technical Architecture docs
-
-### 🚀 **Publishing** (4 skills)
-Package and library distribution
-- `/pubpro` - FAF publish protocol (npm + MCP Registry)
-- `/pubpypi` - Python package publishing
-- `/pubcrate` - Rust crate publishing
-- _...and 1 more_
-
-### 🛠️ **Utilities** (1 skill)
-Development tools and helpers
-- `/skill-creator` - Create new Claude Code skills
+### utility
+- `/repo-maintainer` — championship-grade repository maintenance
 
 ---
 
@@ -115,12 +87,12 @@ python -m http.server 8000
 ### Project Structure
 ```
 faf-skills-site/
-├── index.html              # Main portal (16KB, complete)
-├── project.faf             # 100% Trophy FAF context
+├── index.html              # Portal
+├── skills.json             # Same-origin catalog (7 live skills)
+├── project.faf             # FAF context
 ├── CLAUDE.md               # AI assistant context
 ├── README.md               # This file
-├── package.json            # Deployment configuration
-└── .github/workflows/      # CI/CD automation
+└── package.json            # Deploy script
 ```
 
 ---
