@@ -421,7 +421,7 @@
         <div class="container">
             <h1>Claude Code Skills <span class="way">— the FAF Way</span></h1>
             <p>Persistent project context for <strong>100% <svg class="proof-seal" viewBox="0 0 24 24" role="img" aria-label="Trophy"><circle cx="12" cy="12" r="9.5" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M12 5 L13.65 9.74 L18.66 9.84 L14.66 12.87 L16.11 17.66 L12 14.8 L7.89 17.66 L9.34 12.87 L5.34 9.84 L10.35 9.74 Z" fill="currentColor"/></svg></strong> AI-readiness, built on the <strong>IANA-registered .faf format</strong>. Every skill championship-tested and held to the <strong>FAF Skill Standard</strong>.*</p>
-            <p class="footnote">*Claude Code skills use the open <code>SKILL.md</code> format — also read by Codex, Copilot, Gemini, Cursor &amp; other IDEs. &nbsp;·&nbsp; <span class="legend">✪ = 🏆 = 100%</span> (work mark · social mark).</p>
+            <p class="footnote">*Claude Code skills use the open <code>SKILL.md</code> format — also read by Codex, Copilot, Gemini, Cursor &amp; other IDEs. &nbsp;·&nbsp; <span class="legend">✪ Trophy = 100%</span>: AI is optimized to code.</p>
             
             <div class="hero-stats">
                 <div class="stat">
@@ -443,8 +443,8 @@
     <section class="search-section">
         <div class="container">
             <div class="search-container">
-                <span class="search-icon">🔍</span>
-                <input type="text" class="search-input" id="searchInput" placeholder="Search skills... (e.g., 'commit', 'mcp', 'faf')">
+                <span class="search-icon" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="vertical-align:middle"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></span>
+                <input type="text" class="search-input" id="searchInput" placeholder="Search skills... (e.g., 'faf', 'test', 'repo')">
             </div>
         </div>
     </section>
@@ -502,11 +502,11 @@
         // Same 7 as /skills.json — first paint must not invent ghosts.
         const skills = [
             { name: "faf-context", category: "faf", description: "100% ✪ AI-readiness, fast — typed, portable context you own (IANA-registered .faf)" },
-            { name: "faf-expert", category: "faf", description: "Master the IANA-registered .faf format — scoring, MCP config, bi-sync, the 21-slot model" },
-            { name: "faf-go", category: "faf", description: "Guided interview to Gold Code (100% AI-readiness)" },
+            { name: "faf-expert", category: "faf", description: "Master the IANA-registered .faf format — scoring, MCP config, sync, the always-33 slot model" },
+            { name: "faf-go", category: "faf", description: "Guided interview to Trophy ✪ (100% — AI is optimized to code)" },
             { name: "faf-wizard", category: "faf", description: "Done-for-you .faf generator" },
-            { name: "wjttc-builder", category: "mcp", description: "PLAN and GENERATE WJTTC (Championship-Grade) test suites for any project" },
-            { name: "wjttc-tester", category: "mcp", description: "WJTTC test EXECUTOR + reporter" },
+            { name: "wjttc-builder", category: "testing", description: "PLAN and GENERATE WJTTC (Championship-Grade) test suites for any project" },
+            { name: "wjttc-tester", category: "testing", description: "WJTTC test EXECUTOR + reporter" },
             { name: "repo-maintainer", category: "utility", description: "Championship-grade repository maintenance" }
         ];
 
