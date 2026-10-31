@@ -39,8 +39,8 @@ Source of truth: [`skills.json`](./skills.json), generated in faf-skills (`node 
 - `/faf:faf-score` — scores project.faf for AI-readiness (Grok Build)
 
 ### testing
-- `/wjttc-builder` — plan and generate WJTTC test suites (Claude Code)
-- `/wjttc-tester` — WJTTC test executor + reporter (Claude Code)
+- `/wjttc-builder` — plans and generates a tiered WJTTC test suite (Claude Code)
+- `/wjttc-tester` — runs a WJTTC test suite and writes the report (Claude Code)
 
 ### utility
 - `/repo-maintainer` — repository health check and cleanup plan (Claude Code)
