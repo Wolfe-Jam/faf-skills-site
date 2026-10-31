@@ -1,0 +1,5 @@
+# One short link per channel, so Cloudflare analytics can count each one by path.
+# 302 so every click reaches the edge and is counted (a 301 would be cached by the browser).
+/f  /  302
+/m  /  302
+/x  /  302
