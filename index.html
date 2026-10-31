@@ -265,6 +265,17 @@
             font-size: 0.875rem;
         }
 
+        .skill-ships { display: flex; gap: 0.4rem; flex-wrap: wrap; margin-bottom: 0.75rem; }
+        .skill-ship {
+            border: 1px solid var(--faf-green);
+            color: var(--faf-green);
+            padding: 0.1rem 0.55rem;
+            border-radius: 999px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+        .skill-command + .skill-command { margin-top: 0.5rem; }
+
         .skill-description {
             color: var(--gray);
             margin-bottom: 1rem;
@@ -415,7 +426,8 @@
             </div>
             <div class="nav-links">
                 <a href="https://foundation.faf.one">Foundation</a>
-                <a href="https://github.com/Wolfe-Jam/faf-skills">GitHub</a>
+                <a href="https://github.com/Wolfe-Jam/faf-skills">Claude skills</a>
+                <a href="https://github.com/Wolfe-Jam/faf-grok-plugins">Grok plugin</a>
             </div>
         </div>
     </nav>
@@ -423,7 +435,7 @@
     <section class="hero">
         <div class="container">
             <h1>Agent Skills <span class="way">— the FAF Way</span></h1>
-            <p>Persistent project context for <strong>100% <svg class="proof-seal" viewBox="0 0 24 24" role="img" aria-label="Trophy"><circle cx="12" cy="12" r="9.5" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M12 5 L13.65 9.74 L18.66 9.84 L14.66 12.87 L16.11 17.66 L12 14.8 L7.89 17.66 L9.34 12.87 L5.34 9.84 L10.35 9.74 Z" fill="currentColor"/></svg></strong> AI-readiness, built on the <strong>IANA-registered .faf format</strong>. Every command, flag and tool a skill names is checked against the live faf-cli and claude-faf-mcp before it ships.*</p>
+            <p>Persistent project context for <strong>100% <svg class="proof-seal" viewBox="0 0 24 24" role="img" aria-label="Trophy"><circle cx="12" cy="12" r="9.5" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M12 5 L13.65 9.74 L18.66 9.84 L14.66 12.87 L16.11 17.66 L12 14.8 L7.89 17.66 L9.34 12.87 L5.34 9.84 L10.35 9.74 Z" fill="currentColor"/></svg></strong> AI-readiness, built on the <strong>IANA-registered .faf format</strong>. Every command, flag and tool a Claude Code skill names is checked against the live faf-cli and claude-faf-mcp before it ships.*</p>
             <p class="footnote">*An Agent Skill is a folder with a <code>SKILL.md</code>. Agent Skills were donated to the AAIF; Claude Code, Codex, Copilot, Gemini, Cursor, and Grok Build read the format. &nbsp;·&nbsp; <span class="legend"><img src="/trophy.svg" alt="" width="16" height="16" style="vertical-align:-3px"> ✪ Trophy = 100%</span>: AI is optimized to code.</p>
             
             <div class="hero-stats">
@@ -432,12 +444,8 @@
                     <div class="stat-label">Skills Available</div>
                 </div>
                 <div class="stat">
-                    <div class="stat-number" id="categoryCount">—</div>
-                    <div class="stat-label">Categories</div>
-                </div>
-                <div class="stat">
-                    <div class="stat-number">100%</div>
-                    <div class="stat-label">FAF Compatible</div>
+                    <div class="stat-number" id="installCount">—</div>
+                    <div class="stat-label">Installs: Claude Code · Grok Build</div>
                 </div>
             </div>
         </div>
@@ -500,10 +508,11 @@
 
     <footer>
         <div class="container">
-            <p>Part of the FAF Foundation ecosystem</p>
+            <p>Part of the FAF Foundation ecosystem · Built by an AAIF Ambassador</p>
             <div class="footer-links">
                 <a href="https://faf.one">faf.one</a>
-                <a href="https://github.com/Wolfe-Jam/faf-skills">View on GitHub</a>
+                <a href="https://github.com/Wolfe-Jam/faf-skills">Claude skills</a>
+                <a href="https://github.com/Wolfe-Jam/faf-grok-plugins">Grok plugin</a>
                 <a href="https://www.npmjs.com/package/faf-cli">npm</a>
                 <a href="https://wolfejam.dev">@wolfejam</a>
             </div>
@@ -514,16 +523,25 @@
         // Bundled FALLBACK skill list — shown instantly and used only if the
         // live skills.json fetch (see bottom of script) fails. Live data comes
         // from Wolfe-Jam/faf-skills/skills.json, generated from the SKILL.md files.
-        // Same 7 as /skills.json — first paint must not invent ghosts.
+        // Same 9 as /skills.json — first paint must not invent ghosts.
         const skills = [
-            { name: "faf-context", category: "faf", description: "100% ✪ AI-readiness, fast — typed, portable context you own (IANA-registered .faf)" },
-            { name: "faf-expert", category: "faf", description: "Master the IANA-registered .faf format — scoring, MCP config, sync, the always-33 slot model" },
-            { name: "faf-go", category: "faf", description: "Guided interview to Trophy ✪ (100% — AI is optimized to code)" },
-            { name: "faf-wizard", category: "faf", description: "Done-for-you .faf generator" },
-            { name: "wjttc-builder", category: "testing", description: "PLAN and GENERATE WJTTC (Championship-Grade) test suites for any project" },
-            { name: "wjttc-tester", category: "testing", description: "WJTTC test EXECUTOR + reporter" },
-            { name: "repo-maintainer", category: "utility", description: "Championship-grade repository maintenance" }
+            { name: "faf-context", category: "faf", description: "100% ✪ AI-readiness, fast — typed, portable context you own (IANA-registered .faf)", ships_in: ["claude"] },
+            { name: "faf-expert", category: "faf", description: "Master the IANA-registered .faf format — scoring, MCP config, sync, the always-33 slot model", ships_in: ["claude"] },
+            { name: "faf-go", category: "faf", description: "Guided interview to Trophy ✪ (100% — AI is optimized to code)", ships_in: ["claude"] },
+            { name: "faf-load-context", category: "faf", description: "Loads project.faf: path first, then score, then summary", ships_in: ["grok"] },
+            { name: "faf-score", category: "faf", description: "Scores project.faf for AI-readiness: the number, the tier, and what to fill next", ships_in: ["grok"] },
+            { name: "faf-wizard", category: "faf", description: "Done-for-you .faf generator", ships_in: ["claude"] },
+            { name: "wjttc-builder", category: "testing", description: "PLAN and GENERATE WJTTC (Championship-Grade) test suites for any project", ships_in: ["claude"] },
+            { name: "wjttc-tester", category: "testing", description: "WJTTC test EXECUTOR + reporter", ships_in: ["claude"] },
+            { name: "repo-maintainer", category: "utility", description: "Repository health check and cleanup plan", ships_in: ["claude"] }
         ];
+
+        // Where each install puts a skill, and how it is typed there.
+        const INSTALLS = {
+            claude: { label: 'Claude Code', command: n => `/${n}` },
+            grok: { label: 'Grok Build', command: n => `/faf:${n}` },
+        };
+        const ships = skill => (skill.ships_in && skill.ships_in.length ? skill.ships_in : ['claude']).filter(k => INSTALLS[k]);
 
         // Populate skills grid
         function renderSkills(skillsToRender) {
@@ -535,14 +553,18 @@
                 card.className = 'skill-card';
                 card.innerHTML = `
                     <div class="skill-header">
-                        <div class="skill-name">/${skill.name}</div>
+                        <div class="skill-name">${skill.name}</div>
                         <div class="skill-category">${skill.category}</div>
                     </div>
+                    <div class="skill-ships">${ships(skill).map(k => `<span class="skill-ship">${INSTALLS[k].label}</span>`).join('')}</div>
                     <div class="skill-description">${skill.description}</div>
-                    <div class="skill-command">
-                        <span>/${skill.name}</span>
-                        <button class="copy-button" onclick="copyCommand('/${skill.name}', this)">Copy</button>
-                    </div>
+                    ${ships(skill).map(k => {
+                        const cmd = INSTALLS[k].command(skill.name);
+                        return `<div class="skill-command">
+                        <span>${cmd}</span>
+                        <button class="copy-button" onclick="copyCommand('${cmd}', this)">Copy</button>
+                    </div>`;
+                    }).join('')}
                 `;
                 grid.appendChild(card);
             });
@@ -570,6 +592,7 @@
                 const filtered = activeSkills.filter(skill =>
                     skill.name.toLowerCase().includes(query) ||
                     skill.category.toLowerCase().includes(query) ||
+                    ships(skill).some(k => INSTALLS[k].label.toLowerCase().includes(query)) ||
                     skill.description.toLowerCase().includes(query)
                 );
                 renderSkills(filtered);
@@ -584,7 +607,7 @@
             activeSkills = list;
             // Hero stats derive from the data — the count never goes stale.
             document.getElementById('skillCount').textContent = list.length;
-            document.getElementById('categoryCount').textContent = new Set(list.map(s => s.category)).size;
+            document.getElementById('installCount').textContent = new Set(list.flatMap(ships)).size;
             renderSkills(list);
         }
 
