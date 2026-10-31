@@ -339,7 +339,8 @@
             overflow-x: visible;
         }
         .install-cmd + .install-cmd { margin-top: 0.5rem; }
-        .install-cmd span { white-space: normal; overflow-wrap: anywhere; min-width: 0; }
+        .install-cmd > span { white-space: normal; min-width: 0; }
+        .install-cmd .tok { display: inline-block; white-space: nowrap; }
         .install-cmd .copy-button { flex-shrink: 0; }
         .install-note { color: var(--muted); font-size: 0.875rem; margin-top: 0.75rem; }
         .install-note code, .install-prereq code {
@@ -466,7 +467,7 @@
                 <div class="install-card">
                     <div class="install-step">Recommended — Claude Code plugin</div>
                     <div class="install-cmd">
-                        <span>/plugin marketplace add Wolfe-Jam/faf-skills</span>
+                        <span><span class="tok">/plugin</span> <span class="tok">marketplace</span> <span class="tok">add</span> <span class="tok">Wolfe-Jam/</span><span class="tok">faf-skills</span></span>
                         <button class="copy-button" onclick="copyCommand('/plugin marketplace add Wolfe-Jam/faf-skills', this)">Copy</button>
                     </div>
                     <p class="install-note">Then <code>/plugin install faf@faf-skills</code> — or just <code>/plugin</code> &rarr; Discover. Installs the whole set; new skills arrive on update.</p>
@@ -474,7 +475,7 @@
                 <div class="install-card">
                     <div class="install-step">Claude Code — manual (git clone)</div>
                     <div class="install-cmd">
-                        <span>git clone https://github.com/Wolfe-Jam/faf-skills.git &amp;&amp; cp -r faf-skills/skills/* ~/.claude/skills/</span>
+                        <span><span class="tok">git</span> <span class="tok">clone</span> <span class="tok">https://</span><span class="tok">github.com/</span><span class="tok">Wolfe-Jam/</span><span class="tok">faf-skills.git</span> <span class="tok">&amp;&amp;</span> <span class="tok">cp</span> <span class="tok">-r</span> <span class="tok">faf-skills/</span><span class="tok">skills/*</span> <span class="tok">~/</span><span class="tok">.claude/</span><span class="tok">skills/</span></span>
                         <button class="copy-button" onclick="copyCommand('git clone https://github.com/Wolfe-Jam/faf-skills.git &amp;&amp; cp -r faf-skills/skills/* ~/.claude/skills/', this)">Copy</button>
                     </div>
                     <p class="install-note">Restart Claude Code. Skills activate automatically; call one directly with <code>/faf-expert</code>.</p>
@@ -482,11 +483,11 @@
                 <div class="install-card">
                     <div class="install-step">Grok Build plugin</div>
                     <div class="install-cmd">
-                        <span>grok plugin marketplace add Wolfe-Jam/faf-grok-plugins</span>
+                        <span><span class="tok">grok</span> <span class="tok">plugin</span> <span class="tok">marketplace</span> <span class="tok">add</span> <span class="tok">Wolfe-Jam/</span><span class="tok">faf-grok-plugins</span></span>
                         <button class="copy-button" onclick="copyCommand('grok plugin marketplace add Wolfe-Jam/faf-grok-plugins', this)">Copy</button>
                     </div>
                     <div class="install-cmd">
-                        <span>grok plugin install faf --trust</span>
+                        <span><span class="tok">grok</span> <span class="tok">plugin</span> <span class="tok">install</span> <span class="tok">faf</span> <span class="tok">--trust</span></span>
                         <button class="copy-button" onclick="copyCommand('grok plugin install faf --trust', this)">Copy</button>
                     </div>
                     <p class="install-note">This install loads <code>project.faf</code> and scores it. The Claude install builds context to 100%.</p>
