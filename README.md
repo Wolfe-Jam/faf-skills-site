@@ -35,7 +35,7 @@ Source of truth: [`skills.json`](./skills.json), generated in faf-skills (`node 
 - `/faf-expert` — scoring, MCP config, sync, the always-33 slot model (Claude Code)
 - `/faf-go` — guided interview to Trophy ✪ (Claude Code)
 - `/faf-wizard` — done-for-you `.faf` generator (Claude Code)
-- `/faf:faf-load-context` — loads project.faf at session start: path, score, summary (Grok Build)
+- `/faf:faf-load-context` — loads project.faf: path, score, summary (Grok Build)
 - `/faf:faf-score` — scores project.faf for AI-readiness (Grok Build)
 
 ### testing
