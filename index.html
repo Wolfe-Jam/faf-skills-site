@@ -471,7 +471,7 @@
     <section class="install-section">
         <div class="container">
             <h2>Install</h2>
-            <p class="install-sub">Skills activate automatically from natural language once installed. Claude Code and Grok Build each have their own install.</p>
+            <p class="install-sub">Skills activate automatically from natural language once installed. Claude Code and Grok Build each have their own install; other Agent Skills tools read one shared folder.</p>
             <div class="install-grid">
                 <div class="install-card">
                     <div class="install-step">Recommended — Claude Code plugin</div>
@@ -500,6 +500,14 @@
                         <button class="copy-button" onclick="copyCommand('grok plugin install faf --trust', this)">Copy</button>
                     </div>
                     <p class="install-note">This install loads <code>project.faf</code> and scores it. The Claude install builds context to 100%.</p>
+                </div>
+                <div class="install-card">
+                    <div class="install-step">Any Agent Skills tool — Codex · Copilot · Gemini CLI · Cursor</div>
+                    <div class="install-cmd">
+                        <span><span class="tok">git</span> <span class="tok">clone</span> <span class="tok">https://</span><span class="tok">github.com/</span><span class="tok">Wolfe-Jam/</span><span class="tok">faf-skills.git</span> <span class="tok">&amp;&amp;</span> <span class="tok">mkdir</span> <span class="tok">-p</span> <span class="tok">~/</span><span class="tok">.agents/</span><span class="tok">skills</span> <span class="tok">&amp;&amp;</span> <span class="tok">cp</span> <span class="tok">-r</span> <span class="tok">faf-skills/</span><span class="tok">skills/*</span> <span class="tok">~/</span><span class="tok">.agents/</span><span class="tok">skills/</span></span>
+                        <button class="copy-button" onclick="copyCommand('git clone https://github.com/Wolfe-Jam/faf-skills.git && mkdir -p ~/.agents/skills && cp -r faf-skills/skills/* ~/.agents/skills/', this)">Copy</button>
+                    </div>
+                    <p class="install-note">All four read <code>~/.agents/skills</code>. Copies the 7 faf-skills; start a new session to load them.</p>
                 </div>
             </div>
             <p class="install-prereq">Prerequisite: <code>npm install -g faf-cli</code> &nbsp;·&nbsp; or <code>brew install wolfe-jam/faf/faf-cli</code></p>
@@ -531,8 +539,8 @@
             { name: "faf-load-context", category: "faf", description: "Loads project.faf: path first, then score, then summary", ships_in: ["grok"] },
             { name: "faf-score", category: "faf", description: "Scores project.faf for AI-readiness: the number, the tier, and what to fill next", ships_in: ["grok"] },
             { name: "faf-wizard", category: "faf", description: "Done-for-you .faf generator", ships_in: ["claude"] },
-            { name: "wjttc-builder", category: "testing", description: "PLAN and GENERATE WJTTC (Championship-Grade) test suites for any project", ships_in: ["claude"] },
-            { name: "wjttc-tester", category: "testing", description: "WJTTC test EXECUTOR + reporter", ships_in: ["claude"] },
+            { name: "wjttc-builder", category: "testing", description: "Plans and generates a tiered WJTTC test suite for any project", ships_in: ["claude"] },
+            { name: "wjttc-tester", category: "testing", description: "Runs a WJTTC test suite and writes the report", ships_in: ["claude"] },
             { name: "repo-maintainer", category: "utility", description: "Repository health check and cleanup plan", ships_in: ["claude"] }
         ];
 
