@@ -275,6 +275,7 @@
             font-weight: 600;
         }
         .skill-command + .skill-command { margin-top: 0.5rem; }
+        abbr[title] { text-decoration: underline dotted; text-underline-offset: 3px; cursor: help; }
 
         .skill-description {
             color: var(--gray);
@@ -544,6 +545,10 @@
             { name: "repo-maintainer", category: "utility", description: "Repository health check and cleanup plan", ships_in: ["claude"] }
         ];
 
+        // Short names readers may not know get a tooltip.
+        const ABBR = { WJTTC: 'WolfeJam Technical Testing Certification' };
+        const withAbbr = text => text.replace(/\b(WJTTC)\b/g, (m) => `<abbr title="${ABBR[m]}">${m}</abbr>`);
+
         // Where each install puts a skill, and how it is typed there.
         const INSTALLS = {
             claude: { label: 'Claude Code', command: n => `/${n}` },
@@ -565,7 +570,7 @@
                         <div class="skill-category">${skill.category}</div>
                     </div>
                     <div class="skill-ships">${ships(skill).map(k => `<span class="skill-ship">${INSTALLS[k].label}</span>`).join('')}</div>
-                    <div class="skill-description">${skill.description}</div>
+                    <div class="skill-description">${withAbbr(skill.description)}</div>
                     ${ships(skill).map(k => {
                         const cmd = INSTALLS[k].command(skill.name);
                         return `<div class="skill-command">
