@@ -1,48 +1,49 @@
-# 🛠️ FAF Skills Portal
+# 🛠️ Agent Skills — the FAF Way
 
-**Discover, search, and instantly install the live Claude Code skills**
+**Discover, search and install FAF's Agent Skills, for Claude Code and Grok Build**
 
 [![FAF Trophy 100%](https://img.shields.io/badge/FAF-%F0%9F%8F%86%20100%25-000000?labelColor=FF6B35)](https://faf.one)
 [![Live Site](https://img.shields.io/badge/Live-skills.faf.one-blue)](https://skills.faf.one)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-> **The definitive portal for Claude Code skills in the FAF ecosystem**
+> An Agent Skill is a folder with a `SKILL.md`. Agent Skills were donated to the AAIF; Claude Code, Codex, Copilot, Gemini, Cursor and Grok Build read the format.
 
-[**🚀 Visit skills.faf.one**](https://skills.faf.one) • [Skills Source](https://github.com/Wolfe-Jam/faf-skills) • [FAF Foundation](https://foundation.faf.one)
+[**🚀 Visit skills.faf.one**](https://skills.faf.one) • [Claude skills](https://github.com/Wolfe-Jam/faf-skills) • [Grok plugin](https://github.com/Wolfe-Jam/faf-grok-plugins) • [FAF Foundation](https://foundation.faf.one)
 
 ---
 
 ## ✨ What This Is
 
-The **FAF Skills Portal** is the official web interface for discovering and installing Claude Code skills. The catalog is the live `skills.json` from [faf-skills](https://github.com/Wolfe-Jam/faf-skills) — currently **7** skills, 3 categories. The count is the file, not this README.
+skills.faf.one lists FAF's Agent Skills and how to install them. The catalog is the generated `skills.json` from [faf-skills](https://github.com/Wolfe-Jam/faf-skills): the Claude Code skills in that repo plus the Grok Build plugin's skills from [faf-grok-plugins](https://github.com/Wolfe-Jam/faf-grok-plugins). Each entry says which install ships it (`ships_in`). The count is the file, not this README.
 
 ### 🎯 Key Features
 
-- **🔍 Instant Search** - Find skills by name, category, or functionality
-- **📋 One-Click Copy** - Copy skill commands directly to clipboard
-- **🎨 3 Skill Categories** - faf · mcp · utility
-- **📱 Mobile-First Design** - Perfect on any device
-- **⚡ Zero Build Process** - Pure HTML/CSS/JS for maximum speed
-- **🏆 100% FAF Score** - Championship-grade AI context included
+- **🔍 Instant Search** - by name, category, install, or what it does
+- **📋 One-Click Copy** - the command for each install (`/name` in Claude Code, `/faf:name` in Grok Build)
+- **🧭 Two installs** - Claude Code plugin and Grok Build plugin
+- **📱 Mobile-First Design** - checked at 390px
+- **⚡ Zero Build Process** - plain HTML/CSS/JS
 
 ---
 
-## Available Skills (7)
+## Available Skills (9)
 
-Source of truth: [`skills.json`](./skills.json) (copied from faf-skills on generate).
+Source of truth: [`skills.json`](./skills.json), generated in faf-skills (`node scripts/build-skills-json.mjs --site`).
 
 ### faf
-- `/faf-context` — 100% ✪ AI-readiness, fast
-- `/faf-expert` — scoring, MCP config, bi-sync, 21-slot model
-- `/faf-go` — guided interview to Gold Code
-- `/faf-wizard` — done-for-you `.faf` generator
+- `/faf-context` — 100% ✪ AI-readiness, fast (Claude Code)
+- `/faf-expert` — scoring, MCP config, sync, the always-33 slot model (Claude Code)
+- `/faf-go` — guided interview to Trophy ✪ (Claude Code)
+- `/faf-wizard` — done-for-you `.faf` generator (Claude Code)
+- `/faf:faf-load-context` — loads project.faf at session start: path, score, summary (Grok Build)
+- `/faf:faf-score` — scores project.faf for AI-readiness (Grok Build)
 
-### mcp
-- `/wjttc-builder` — plan and generate WJTTC test suites
-- `/wjttc-tester` — WJTTC test executor + reporter
+### testing
+- `/wjttc-builder` — plan and generate WJTTC test suites (Claude Code)
+- `/wjttc-tester` — WJTTC test executor + reporter (Claude Code)
 
 ### utility
-- `/repo-maintainer` — championship-grade repository maintenance
+- `/repo-maintainer` — repository health check and cleanup plan (Claude Code)
 
 ---
 
